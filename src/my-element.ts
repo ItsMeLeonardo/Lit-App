@@ -35,6 +35,9 @@ export class MyElement extends LitElement {
       <button @click=${this._onClick} part="button">
         Click Count: ${this.count}
       </button>
+      <button @click=${this._decrement} part="button">
+        Decrement Count: ${this.count}
+      </button>
       <slot></slot>
     `
   }
@@ -43,8 +46,8 @@ export class MyElement extends LitElement {
     this.count++
   }
 
-  foo(): string {
-    return 'foo'
+  private _decrement() {
+    this.count--
   }
 }
 
